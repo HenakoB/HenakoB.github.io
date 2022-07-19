@@ -41,6 +41,9 @@
         </a-marker>
       
       <a-entity camera></a-entity>
+      <a-entity cursor="rayOrigin:mouse"></a-entity>
+      <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
+      <a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
     </a-scene>
   </body>
 </html>
