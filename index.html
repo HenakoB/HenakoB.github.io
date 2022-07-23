@@ -3,16 +3,7 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script src="./script.js"></script>
-  <body style="margin: 0px; overflow: hidden">
-    
+  <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
        
         </a-marker>
@@ -20,18 +11,18 @@
               <a-dodecahedron
                 position="0 0 0" 
                 scale="0.5 1.5 0.5"
-                radius="1.25"
-                rotation="1 0 0"
-                color="#0000FF">         
+                radius="1" 
+                color="#14a115">
+              <a-animation attribute="rotation"
+                  dur="3000"
+                  to="360 360 0"
+                  repeat="indefitine"
+                  easing="linear"
+               <a-animation>
            </a-dodecahedron>
-
-         
         </a-marker>
       
       <a-entity camera></a-entity>
-      <a-entity cursor="rayOrigin:mouse"></a-entity>
-      <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
-      <a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
     </a-scene>
   </body>
 </html>
