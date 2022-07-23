@@ -2,8 +2,17 @@
 <html>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="./script.js"></script>
+  <body style="margin: 0px; overflow: hidden">
+    
     <a-scene embedded arjs>
        
         </a-marker>
@@ -20,14 +29,23 @@
                   easing="linear"
                <a-animation>
            </a-dodecahedron>
-          <p class="text">AMPOGI KO</p>
+                  >
+          <a-text
+            id="Dodecahedron"
+            value="Gumana ka na please"
             position="1 1 1"
-            scale="0.5 1.5 0.5"
-            visible="true"
+            scale="0.7 0.7 0.7"
+            align="left"
+            color="white"
+            visible="false"
             look-at="[camera]"
+          ></a-text>
         </a-marker>
       
       <a-entity camera></a-entity>
+      <a-entity cursor="rayOrigin:mouse"></a-entity>
+      <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
+      <a-entity cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
     </a-scene>
   </body>
 </html>
